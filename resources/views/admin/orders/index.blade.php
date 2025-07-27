@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
+    @include('layouts.partials.navigation')
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-6">Daftar Pesanan Masuk</h1>
         <div class="bg-white shadow-md rounded-lg overflow-x-auto">

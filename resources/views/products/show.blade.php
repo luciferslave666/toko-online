@@ -1,47 +1,80 @@
-{{-- resources/views/products/show.blade.php --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $product->name }}</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="bg-gray-100">
+@extends('layouts.app')
 
-    <div class="container mx-auto mt-10 p-5">
-        <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
-            <a href="{{ route('products.index') }}" class="text-blue-600 hover:underline mb-6 inline-block">&larr; Kembali ke Katalog</a>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <img src="{{ $product->image ? asset('storage/' . $product->image) : 'https://via.placeholder.com/300' }}" alt="{{ $product->name }}" class="w-full rounded-lg">
+@section('content')
+<div class="bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <div>
+                <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg shadow-lg">
+                    <img src="{{ $product->image ? asset('storage/' . $product->image) : 'https://placehold.co/600x600' }}" alt="{{ $product->name }}" class="w-full h-full object-cover">
                 </div>
-                <div>
-                    <h1 class="text-4xl font-bold mb-4">{{ $product->name }}</h1>
-                    <p class="text-gray-600 mb-6">{{ $product->description }}</p>
-                    <p class="text-3xl font-light text-green-600 mb-2">
-                        Rp {{ number_format($product->price, 0, ',', '.') }}
-                    </p>
-                    <p class="text-sm text-gray-500 mb-6">
-                        Stok: {{ $product->stock }}
-                    </p>
-                    <form action="{{ route('cart.add', $product) }}" method="POST">
-                        @csrf  {{-- Token keamanan Laravel, wajib ada --}}
+                </div>
 
-                        <div class="flex items-center mb-6">
-                            <label for="quantity" class="mr-4 font-semibold">Jumlah:</label>
+            <div>
+                @if($product->category)
+                <a href="#" class="text-sm font-medium text-red-600 hover:text-red-500">{{ $product->category->name }}</a>
+                @endif
+                
+                <h1 class="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">{{ $product->name }}</h1>
+                
+                <div class="mt-4">
+                    <p class="text-3xl text-gray-900">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                </div>
+
+                <div class="mt-6">
+                    <h3 class="sr-only">Deskripsi</h3>
+                    <div class="space-y-6 text-base text-gray-700">
+                        <p>{{ $product->description }}</p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <p class="text-sm font-medium {{ $product->stock > 0 ? 'text-green-600' : 'text-red-600' }}">
+                        {{ $product->stock > 0 ? 'Stok Tersedia: ' . $product->stock : 'Stok Habis' }}
+                    </p>
+                </div>
+
+                @if($product->stock > 0)
+                <form action="{{ route('cart.add', $product) }}" method="POST" class="mt-8">
+                    @csrf
+                    <div class="flex items-center space-x-4">
+                        <div>
+                            <label for="quantity" class="sr-only">Jumlah</label>
                             <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ $product->stock }}"
-                                class="w-20 border border-gray-300 rounded-md p-2 text-center">
+                                   class="w-20 rounded-md border-gray-300 text-center focus:ring-red-500 focus:border-red-500">
                         </div>
-
-                        <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        <button type="submit" class="flex-1 bg-red-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-red-700">
                             Tambah ke Keranjang
                         </button>
-                    </form>
+                    </div>
+                </form>
+                @endif
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Produk Lain yang Mungkin Anda Suka</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {{-- Loop untuk menampilkan produk terkait bisa ditambahkan di sini --}}
+            <div class="group relative">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden lg:h-80">
+                    <div class="w-full h-full bg-gray-300"></div>
+                </div>
+                <div class="mt-4 flex justify-between">
+                    <div>
+                        <h3 class="text-sm text-gray-700">
+                            <a href="#">Nama Produk Terkait</a>
+                        </h3>
+                    </div>
+                    <p class="text-sm font-medium text-gray-900">Rp 0</p>
                 </div>
             </div>
         </div>
     </div>
-
-</body>
-</html>
+</div>
+@endsection

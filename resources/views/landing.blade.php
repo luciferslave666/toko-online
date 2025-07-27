@@ -15,10 +15,10 @@
 
     {{-- Hero Section --}}
     <div class="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-20" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=NOCTXVIBE+Hero'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 z-0 opacity-20" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=NOCTVIBE'); background-size: cover; background-position: center;"></div>
         <div class="relative z-10 max-w-4xl mx-auto text-center">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4 animate-fade-in-up">
-                Temukan Gaya Unikmu di NOCTXVIBE
+                Temukan Gaya Unikmu di NOCTVIBE
             </h1>
             <p class="text-lg sm:text-xl mb-8 opacity-90 animate-fade-in-up delay-200">
                 Koleksi fashion terbaru yang akan membuatmu tampil beda dan percaya diri.
@@ -80,7 +80,7 @@
                 <div>
                     <h3 class="text-xl font-bold text-white mb-4">NOCTXVIBE</h3>
                     <p class="text-sm">
-                        Temukan gaya unikmu dengan koleksi fashion terbaru dari NOCTXVIBE. Kualitas premium, desain eksklusif.
+                        Temukan gaya unikmu dengan koleksi fashion terbaru dari NOCTVIBE. Kualitas premium, desain eksklusif.
                     </p>
                     <div class="flex space-x-4 mt-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
@@ -122,14 +122,14 @@
                 {{-- Kolom 3: Kontak Kami --}}
                 <div>
                     <h3 class="text-xl font-bold text-white mb-4">Hubungi Kami</h3>
-                    <p class="text-sm mb-2">Email: info@noctxvibe.com</p>
+                    <p class="text-sm mb-2">Email: info@noctvibe.com</p>
                     <p class="text-sm mb-2">Telepon: +62 812-3456-7890</p>
                     <p class="text-sm">Alamat: Jl. Contoh No. 123, Kota Bandung, Indonesia</p>
                 </div>
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
-                &copy; {{ date('Y') }} NOCTXVIBE. All rights reserved.
+                &copy; {{ date('Y') }} NOCTVIBE. All rights reserved.
             </div>
         </div>
     </footer>

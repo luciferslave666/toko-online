@@ -8,7 +8,9 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\PageController; // <-- DITAMBAHKAN
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +37,12 @@ Route::get('/order/success/{order}', [OrderController::class, 'success'])->name(
 //== HALAMAN PENGGUNA (SETELAH LOGIN) ==//
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        // Ambil beberapa produk untuk ditampilkan
+        $products = App\Models\Product::latest()->take(6)->get();
+
+        // Kirim data $products ke view
+        return view('dashboard', ['products' => $products]);
+
     })->middleware('verified')->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -56,6 +63,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(
 
     // Rute Resource untuk Produk
     Route::resource('products', AdminProductController::class);
+    Route::resource('categories', AdminCategoryController::class);
 });
 
 
