@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#" target="_blank">
-    <h1 align="center" style="font-size: 3rem; font-weight: bold;">NOCTVIBE</h1>
+    <h1 align="center" style="font-size: 3rem; font-weight: bold;">Toko - Online</h1>
   </a>
 </p>
 
