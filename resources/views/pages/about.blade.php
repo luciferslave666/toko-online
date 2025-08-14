@@ -5,9 +5,9 @@
         <div class="container mx-auto px-6 lg:px-8">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-base font-semibold leading-7 text-gray-800">Our Story</h2>
-                <p class="mt-2 text-4xl font-bold tracking-tight text-neutral-800 sm:text-5xl">About NOCTVIBE</p>
+                <p class="mt-2 text-4xl font-bold tracking-tight text-neutral-800 sm:text-5xl">About Rupa Collective</p>
                 <p class="mt-6 text-lg leading-8 text-gray-600">
-                    Kami percaya bahwa pakaian adalah kanvas untuk mengekspresikan diri. NOCTVIBE lahir dari hasrat untuk menciptakan fashion yang unik, berani, dan otentik bagi mereka yang tidak takut untuk tampil beda.
+                    Kami percaya bahwa pakaian adalah kanvas untuk mengekspresikan diri. Rupa Collective lahir dari hasrat untuk menciptakan fashion yang unik, berani, dan otentik bagi mereka yang tidak takut untuk tampil beda.
                 </p>
             </div>
 

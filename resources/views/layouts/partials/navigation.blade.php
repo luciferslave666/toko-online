@@ -9,7 +9,7 @@
                    </button>
                 </div>
                 <a href="{{ route('landing') }}" class="text-2xl font-bold text-black tracking-wider">
-                    NOCTVIBE
+                    Rupa Collective
                 </a>
             </div>
 
