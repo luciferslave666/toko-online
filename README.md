@@ -12,7 +12,7 @@
 
 ## Tentang Proyek
 
-**NOCTVIBE** adalah aplikasi web e-commerce fungsional yang dirancang untuk menyediakan platform jual beli produk fashion. Proyek ini mencakup semua alur penting dari sebuah toko online, mulai dari menampilkan produk, manajemen keranjang belanja, proses checkout, hingga panel admin untuk mengelola produk dan pesanan.
+**Rupa Collective** adalah aplikasi web e-commerce fungsional yang dirancang untuk menyediakan platform jual beli produk fashion. Proyek ini mencakup semua alur penting dari sebuah toko online, mulai dari menampilkan produk, manajemen keranjang belanja, proses checkout, hingga panel admin untuk mengelola produk dan pesanan.
 
 Proyek ini dibangun sebagai studi kasus untuk mengimplementasikan praktik terbaik pengembangan web modern menggunakan ekosistem Laravel.
 
